@@ -151,5 +151,17 @@ $(".card .list-group").sortable({
   },
 });
 
+$("#trash").droppable({
+  accept: ".card .list-group-item",
+  tolerance: "touch",
+  drop: function(event,ui){
+   ui.draggable.remove();
+  },
+  over:function(event,ui){
+  },
+  out:function(event,ui){
+  }
+});
+
 // load tasks for the first time
 loadTasks();
