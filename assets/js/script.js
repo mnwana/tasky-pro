@@ -153,10 +153,18 @@ $(".card .list-group").sortable({
   scroll: false,
   tolerance: "pointer",
   helper: "clone",
-  activate: function (event) {},
-  deactivate: function (event) {},
-  over: function (event) {},
-  out: function (event) {},
+  activate: function (event) {
+    $(this).addClass("dropover");
+  },
+  deactivate: function (event) {
+    $(this).removeClass("dropover");
+  },
+  over: function (event) {
+    $(event.target).addClass("dropover-active");
+  },
+  out: function (event) {
+    $(event.target).removeClass("dropover-active");
+  },
   update: function (event) {
     var tempArr = [];
     $(this)
